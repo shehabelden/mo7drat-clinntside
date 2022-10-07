@@ -9,8 +9,8 @@ class auth_badge_cubt extends Cubit<main_auth_state>{
   void token(){
     SharedPreferences.getInstance().then((value){
       token_key=value.getString("token_pref");
+      emit(login_state());
     });
-    // print(token_key!);
-    emit(login_state());
+     // print(token_key!);
   }
 }

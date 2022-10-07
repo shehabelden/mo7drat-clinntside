@@ -11,14 +11,8 @@ class DioHelper {
   static init() {
     dio = Dio(
       BaseOptions(
-        //Here the URL of API.
         baseUrl: baseUrl,
         receiveDataWhenStatusError: true,
-        //Here we Put The Headers Needed in The API.
-        // headers: {
-        //   'Content-Type': 'application/json',
-        //   //'lang':'en'
-        // },
       ),
     );
   }

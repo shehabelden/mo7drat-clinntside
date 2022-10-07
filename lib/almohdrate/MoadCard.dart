@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/style/Button.dart';
+import '../style/colormanger.dart';
 Widget moadCard(value,hight,width,pading){
   return Stack(
       children: [
@@ -8,9 +10,9 @@ Widget moadCard(value,hight,width,pading){
           decoration: BoxDecoration(
             border: Border.all(
               width: .1,
-              color: Colors.deepPurpleAccent,
+              color: ColorManger.third,
             ),
-            borderRadius: BorderRadius.circular(35),
+            borderRadius: BorderRadius.circular(hight/4),
             image: DecorationImage(
               image: NetworkImage(value["Image"].toString()),
               fit: BoxFit.fill,
@@ -24,11 +26,12 @@ Widget moadCard(value,hight,width,pading){
               child: Container(
                 padding:const EdgeInsets.only(left: 5,right: 5),
                 decoration: BoxDecoration(
-                  color: Colors.deepPurpleAccent,
+                  color: MainBoutton.prime,
                   border:Border.all(
                     color:Colors.black,
                     width: .4
                   ),
+                  borderRadius: BorderRadius.circular(25),
                 ),
                 child: Text("${value["scientific_material_name"]}",
                   style:const TextStyle(

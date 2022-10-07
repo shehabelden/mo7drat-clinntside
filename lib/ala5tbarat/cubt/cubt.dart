@@ -1,23 +1,28 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:untitled/Dio/dio_get.dart';
 import 'package:untitled/ala5tbarat/cubt/state.dart';
-class MainMohdrateCubt extends Cubit<Maina5tbareState> {
-  MainMohdrateCubt() : super(InitA5tbarState());
-  static MainMohdrateCubt get(context) => BlocProvider.of(context);
-  String gropval="";
-  List sortquizlist=[];
+import 'package:flutter/material.dart';
+class Main5tbarCubt extends Cubit<Maina5tbareState> {
+  Main5tbarCubt() : super(InitA5tbarState());
+  static Main5tbarCubt get(context) => BlocProvider.of(context);
+  String ? gropval;
+  List  sortquizlist=[];
   List quizlist=[];
+  bool  selctedanser=false;
   String val ="";
-  void getlist(sessionname){
+  List <Color> colorlist=[
+    Colors.grey.shade300,
+    Colors.green,
+    Colors.red,
+  ];
+  void getlist() async{
     if(sortquizlist.isEmpty){
-    DioHelper.getData(url:"mohdratemain/akhtbar/$sessionname").then((value){
+    await DioHelper.getData(url:"mohdratemain/akhtbar/الإطار المفاهيمي للإقتصاد الكلي.").then((value){
       sortquizlist=value.data["akhtbar"];
-      for(int i=0;i<=sortquizlist.length;i++){
-        if(sortquizlist[i]!=null){
-          quizlist.add(sortquizlist[i]);
-        }
-      }}
+      quizlist=sortquizlist[0]["anserrelated"];
+      }
     );
-    print(quizlist);
-    }}
+    }
+    emit(ApiFitch());
   }
+}

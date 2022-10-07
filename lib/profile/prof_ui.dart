@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/profile/prof_drata.dart';
+import 'package:untitled/style/colormanger.dart';
 List <String>iconsta=[
   "images/3ash_icon.png",
   "images/rate_icon.png",
@@ -22,20 +23,33 @@ class ProfMain extends StatelessWidget {
           children: [
           Expanded(
             flex: 1,
-            child: Container(
-                height: 200,
-                width: 200,
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                  borderRadius:BorderRadius.circular(120),
-                  border: Border.all(
-                    width: .1,
+            child: Column(
+              children: [
+                Container(
+                    height: 200,
+                    width: 200,
+                    decoration: BoxDecoration(
+                      image:const DecorationImage(
+                        image: AssetImage("images/7mada1.png",),
+                        fit: BoxFit.cover,
+                      ),
+                        color:ColorManger.third,
+                      borderRadius:BorderRadius.circular(120),
+                      border: Border.all(
+                        width: .1,
+                      ),
+                    ),
                   ),
-                ),
-              ),
+                Text("shehab eldin ehab",style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  color: ColorManger.primeText,
+                )),
+              ],
+            ),
           ),
           Expanded(
-            flex: 3,
+            flex: 2,
             child: Column(
               children: [
                 profdata(iconsta[0],title[0]),
@@ -46,9 +60,12 @@ class ProfMain extends StatelessWidget {
                   child: InkWell(
                     onTap: (){},
                     child: Container(
-                      color:Colors.deepPurple.shade900,
                       width: 156,
-                      padding:const EdgeInsets.only(left: 10,right: 10) ,
+                      decoration: BoxDecoration(
+                        color:Colors.deepPurple.shade900,
+                        borderRadius: BorderRadius.circular(25),
+                      ),
+                      padding:const EdgeInsets.only(left: 10,right: 10),
                       child:const Text("المحضرات",
                         style:TextStyle(
                           color: Colors.white,

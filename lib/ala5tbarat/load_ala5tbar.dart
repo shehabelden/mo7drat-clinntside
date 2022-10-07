@@ -27,7 +27,7 @@ class LocalAla5tbar extends StatelessWidget {
                   width: MediaQuery.of(context).size.width,
                   height:MediaQuery.of(context).size.height,
                   child: Center(
-                      child: Text('text $i', style: TextStyle(fontSize: 16.0,color:ColorManger.primeText),
+                      child: Text('$i', style: TextStyle(fontSize: 16.0,color:ColorManger.primeText),
                         textAlign: TextAlign.center,
                       )
                   )
